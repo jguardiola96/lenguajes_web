@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Autoevaluación - Lenguajes de Programación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Test de Autoevaluación</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contenido.html">Contenido</a></li>
+        <li><a href="#formulario">Completa el test</a></li>
+        <li><a href="instrucciones.html">Entrega</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="formulario">
+      <h2>Comprueba lo que has aprendido</h2>
+      <form id="quizForm">
+        <!-- 1 -->
+        <div>
+          <p>1. ¿Qué tipo de lenguaje se traduce antes de ejecutarse?</p>
+          <label><input type="radio" name="q1" value="compilado"> Compilado</label><br>
+          <label><input type="radio" name="q1" value="interpretado"> Interpretado</label>
+        </div>
+        <!-- 2 -->
+        <div>
+          <p>2. Python es un lenguaje compilado. (Verdadero/Falso)</p>
+          <label><input type="radio" name="q2" value="verdadero"> Verdadero</label><br>
+          <label><input type="radio" name="q2" value="falso"> Falso</label>
+        </div>
+        <!-- 3 -->
+        <div>
+          <p>3. Selecciona un lenguaje de alto nivel:</p>
+          <select name="q3">
+            <option value="">--Elige--</option>
+            <option value="assembly">Assembly</option>
+            <option value="java">Java</option>
+            <option value="c">C</option>
+          </select>
+        </div>
+        <!-- 4 -->
+        <div>
+          <p>4. JavaScript se utiliza principalmente en el backend. (Verdadero/Falso)</p>
+          <label><input type="radio" name="q4" value="verdadero"> Verdadero</label><br>
+          <label><input type="radio" name="q4" value="falso"> Falso</label>
+        </div>
+        <!-- 5 -->
+        <div>
+          <p>5. ¿Cuál de estos lenguajes NO es compilado?</p>
+          <label><input type="checkbox" name="q5" value="python"> Python</label><br>
+          <label><input type="checkbox" name="q5" value="java"> Java</label><br>
+          <label><input type="checkbox" name="q5" value="c"> C</label>
+        </div>
+        <!-- 6 -->
+        <div>
+          <p>6. ¿Qué salida produce <code>print("Hola")</code> en Python?</p>
+          <input type="text" name="q6">
+        </div>
+        <!-- 7 -->
+        <div>
+          <p>7. Elige dos lenguajes interpretados:</p>
+          <label><input type="checkbox" name="q7" value="python"> Python</label><br>
+          <label><input type="checkbox" name="q7" value="javascript"> JavaScript</label><br>
+          <label><input type="checkbox" name="q7" value="csharp"> C#</label>
+        </div>
+        <!-- 8 -->
+        <div>
+          <p>8. Un lenguaje de bajo nivel es más cercano al lenguaje máquina. (Verdadero/Falso)</p>
+          <label><input type="radio" name="q8" value="verdadero"> Verdadero</label><br>
+          <label><input type="radio" name="q8" value="falso"> Falso</label>
+        </div>
+        <!-- 9 -->
+        <div>
+          <p>9. Selecciona el uso principal de C++:</p>
+          <select name="q9">
+            <option value="">--Elige--</option>
+            <option value="sistemas">Desarrollo de sistemas</option>
+            <option value="web">Desarrollo web</option>
+            <option value="movil">Aplicaciones móviles</option>
+          </select>
+        </div>
+        <!-- 10 -->
+        <div>
+          <p>10. ¿Qué lenguaje usarías para IA?</p>
+          <label><input type="radio" name="q10" value="python"> Python</label><br>
+          <label><input type="radio" name="q10" value="php"> PHP</label>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="result" style="margin-top:20px;"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 ESO 4 - Departamento de Informática</p>
+  </footer>
+  <script>
+    document.getElementById('quizForm').onsubmit = function(e) {
+      e.preventDefault();
+      var score = 0;
+      var feedback = '';
+      var answers = {
+        q1: 'compilado',
+        q2: 'falso',
+        q3: 'java',
+        q4: 'falso',
+        q5: ['python'],
+        q6: 'Hola',
+        q7: ['python','javascript'],
+        q8: 'verdadero',
+        q9: 'sistemas',
+        q10: 'python'
+      };
+      var form = e.target;
+      // 1
+      if(form.q1.value === answers.q1) { score++; feedback += '<p>1 correcta</p>'; } else { feedback += '<p>1 incorrecta</p>'; }
+      // 2
+      if(form.q2.value === answers.q2) { score++; feedback += '<p>2 correcta</p>'; } else { feedback += '<p>2 incorrecta</p>'; }
+      // 3
+      if(form.q3.value === answers.q3) { score++; feedback += '<p>3 correcta</p>'; } else { feedback += '<p>3 incorrecta</p>'; }
+      // 4
+      if(form.q4.value === answers.q4) { score++; feedback += '<p>4 correcta</p>'; } else { feedback += '<p>4 incorrecta</p>'; }
+      // 5
+      var q5 = form.q5.value;
+      if(q5 && answers.q5.includes(q5)) { score++; feedback += '<p>5 correcta</p>'; } else { feedback += '<p>5 incorrecta</p>'; }
+      // 6
+      if(form.q6.value.trim() === answers.q6) { score++; feedback += '<p>6 correcta</p>'; } else { feedback += '<p>6 incorrecta</p>'; }
+      // 7
+      var q7 = Array.from(form.querySelectorAll('input[name="q7"]:checked')).map(i=>i.value);
+      if(q7.sort().join()==answers.q7.sort().join()) { score++; feedback += '<p>7 correcta</p>'; } else { feedback += '<p>7 incorrecta</p>'; }
+      // 8
+      if(form.q8.value === answers.q8) { score++; feedback += '<p>8 correcta</p>'; } else { feedback += '<p>8 incorrecta</p>'; }
+      // 9
+      if(form.q9.value === answers.q9) { score++; feedback += '<p>9 correcta</p>'; } else { feedback += '<p>9 incorrecta</p>'; }
+      // 10
+      if(form.q10.value === answers.q10) { score++; feedback += '<p>10 correcta</p>'; } else { feedback += '<p>10 incorrecta</p>'; }
+      feedback = '<h3>Resultado: ' + score + '/10</h3>' + feedback;
+      document.getElementById('result').innerHTML = feedback;
+    };
+  </script>
+</body>
+</html>
