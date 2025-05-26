@@ -1,68 +1,212 @@
+<!-- contenido.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Contenido - Lenguajes de Programación</title>
+  <title>Contenido – Lenguajes de Programación</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Materialize CSS & Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="purple darken-2">
     <div class="nav-wrapper container">
       <a href="index.html" class="brand-logo"><i class="material-icons">code</i>Lenguajes</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
-        <li><a href="contenido.html"><i class="material-icons left">menu_book</i>Contenido</a></li>
+        <li class="active"><a href="contenido.html"><i class="material-icons left">menu_book</i>Contenido</a></li>
         <li><a href="test.html"><i class="material-icons left">quiz</i>Autoevaluación</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
+    <!-- Introducción -->
     <div class="section">
-      <h3>Desarrollo del contenido</h3>
-      <p>Un lenguaje de programación es un conjunto de instrucciones y reglas sintácticas que permiten a un programador comunicarse con un ordenador. Existen diferentes niveles:</p>
+      <h4>Comparativa de Lenguajes</h4>
+      <table class="striped responsive-table">
+        <thead>
+          <tr>
+            <th>Lenguaje</th>
+            <th>Tipado</th>
+            <th>Paradigma</th>
+            <th>Compilación/Ejecución</th>
+            <th>Usos más comunes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Python</td>
+            <td>Dinámico</td>
+            <td>Procedural, OO, Funcional</td>
+            <td>Interpretado (CPython, PyPy)</td>
+            <td>Web, Ciencia de datos, IA, Scripts</td>
+          </tr>
+          <tr>
+            <td>Java</td>
+            <td>Estático</td>
+            <td>Orientado a objetos</td>
+            <td>Compila a bytecode → JVM</td>
+            <td>Empresarial, Android, Big Data</td>
+          </tr>
+          <tr>
+            <td>C++</td>
+            <td>Estático</td>
+            <td>Procedimental, OO, Genérico</td>
+            <td>Compilado nativo</td>
+            <td>Juegos, Sistemas, Alta perf.</td>
+          </tr>
+          <tr>
+            <td>C#</td>
+            <td>Estático</td>
+            <td>Orientado a objetos, Funcional</td>
+            <td>Compila a MSIL → CLR</td>
+            <td>Desktop, Web, Juegos (Unity)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <h5>Lenguajes de bajo nivel</h5>
-      <p>Se aproximan mucho al lenguaje máquina. Ofrecen un control muy preciso de la memoria y el hardware, pero son más complejos de escribir y mantener.</p>
-      <a href="https://upload.wikimedia.org/wikipedia/commons/2/25/Assembly_syntax.png" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Assembly_syntax.png/400px-Assembly_syntax.png" alt="Ejemplo Assembly" class="responsive-img">
-      </a>
+    <div class="divider"></div>
 
-      <h5>Lenguajes de alto nivel</h5>
-      <p>Están más cerca del lenguaje humano. Simplifican el desarrollo y ofrecen bibliotecas extensas.</p>
-      <p><strong>Ejemplo en Python:</strong></p>
-      <pre><code>def saludar(nombre):
-    print(f"Hola, {nombre}!")
-
-saludar("Mundo")</code></pre>
-      <a href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/200px-Python-logo-notext.svg.png" alt="Logo Python" class="responsive-img">
-      </a>
-
-      <h5>Paradigmas de programación</h5>
+    <!-- Python -->
+    <div class="section">
+      <h4>Python</h4>
+      <p><em>Python</em> destaca por su sintaxis clara, tipado dinámico y gran ecosistema. Cada indentación define bloques, lo cual refuerza la legibilidad.</p>
       <ul class="browser-default">
-        <li>Imperativo: instrucciones secuenciales (C, Go).</li>
-        <li>Orientado a objetos: uso de clases y objetos (Java, C#).</li>
-        <li>Funcional: funciones como ciudadanos de primera clase (Haskell, Scala).</li>
+        <li><strong>Ventajas:</strong> rápido prototipado, gran comunidad, bibliotecas de IA y datos.</li>
+        <li><strong>Desventajas:</strong> rendimiento menor que C/C++, gestión de hilos limitada (GIL).</li>
       </ul>
+      <p><strong>Ejemplo – List Comprehension y Función Recursiva:</strong></p>
+      <pre><code># Filtrar números pares y calcular factorial
+pares = [x for x in range(10) if x % 2 == 0]
 
-      <h5>Ventajas y desventajas</h5>
+def factorial(n):
+    return 1 if n == 0 else n * factorial(n-1)
+
+print("Pares:", pares)
+print("5! =", factorial(5))
+</code></pre>
+      <p>
+        <a href="https://www.python.org/" target="_blank" class="btn-small purple darken-1">python.org</a>
+        <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/100px-Python-logo-notext.svg.png"
+           target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/100px-Python-logo-notext.svg.png"
+           alt="Logo Python" class="right responsive-img"></a>
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Java -->
+    <div class="section">
+      <h4>Java</h4>
+      <p><em>Java</em> usa tipado estático y corre en cualquier plataforma con una JVM. Su filosofía “Write Once, Run Anywhere” facilita la portabilidad.</p>
       <ul class="browser-default">
-        <li><strong>Bajo nivel:</strong> + rendimiento; - complejidad.</li>
-        <li><strong>Alto nivel:</strong> + productividad; - menor control de hardware.</li>
+        <li><strong>Ventajas:</strong> robustez, recolector de basura, ecosistema empresarial.</li>
+        <li><strong>Desventajas:</strong> sintaxis verbosa, consumo de memoria.</li>
       </ul>
+      <p><strong>Ejemplo – Clase y Método Estático:</strong></p>
+      <pre><code>public class Calculadora {
+    public static int suma(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("2 + 3 = " + suma(2, 3));
+    }
+}
+</code></pre>
+      <p>
+        <a href="https://www.oracle.com/java/" target="_blank" class="btn-small purple darken-1">oracle.com/java</a>
+        <a href="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/100px-Java_programming_language_logo.svg.png"
+           target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/100px-Java_programming_language_logo.svg.png"
+           alt="Logo Java" class="right responsive-img"></a>
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- C++ -->
+    <div class="section">
+      <h4>C++</h4>
+      <p><em>C++</em> ofrece control de bajo nivel con características de alto nivel: RAII, templates y sobrecarga de operadores.</p>
+      <ul class="browser-default">
+        <li><strong>Ventajas:</strong> máxima velocidad, uso en sistemas críticos.</li>
+        <li><strong>Desventajas:</strong> gestión manual de memoria, complejidad.</li>
+      </ul>
+      <p><strong>Ejemplo – Plantilla Genérica y Punteros:</strong></p>
+      <pre><code>#include <iostream>
+using namespace std;
+
+template<typename T>
+T maximo(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int *p = new int(42);
+    cout << "Máximo(5,7) = " << maximo(5, 7) << endl;
+    cout << "Valor apuntado: " << *p << endl;
+    delete p;
+    return 0;
+}
+</code></pre>
+      <p>
+        <a href="https://isocpp.org/" target="_blank" class="btn-small purple darken-1">isocpp.org</a>
+        <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/100px-ISO_C%2B%2B_Logo.svg.png"
+           target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/100px-ISO_C%2B%2B_Logo.svg.png"
+           alt="Logo C++" class="right responsive-img"></a>
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- C# -->
+    <div class="section">
+      <h4>C#</h4>
+      <p><em>C#</em> se integra con .NET, soporta LINQ, async/await y una sintaxis moderna inspirada en C++/Java.</p>
+      <ul class="browser-default">
+        <li><strong>Ventajas:</strong> desarrollo rápido, gran biblioteca estándar.</li>
+        <li><strong>Desventajas:</strong> menor portabilidad fuera de .NET.</li>
+      </ul>
+      <p><strong>Ejemplo – LINQ y Async:</strong></p>
+      <pre><code>using System;
+using System.Linq;
+using System.Threading.Tasks;
+
+class Programa {
+    static async Task Main() {
+        var nums = new[] {1,2,3,4,5};
+        var pares = nums.Where(n => n % 2 == 0);
+        Console.WriteLine("Pares: " + string.Join(",", pares));
+        await Task.Delay(500);
+        Console.WriteLine("¡Tarea asíncrona completada!");
+    }
+}
+</code></pre>
+      <p>
+        <a href="https://docs.microsoft.com/dotnet/csharp/" target="_blank" class="btn-small purple darken-1">docs.microsoft.com</a>
+        <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Csharp_Logo.png/100px-Csharp_Logo.png"
+           target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Csharp_Logo.png/100px-Csharp_Logo.png"
+           alt="Logo C#" class="right responsive-img"></a>
+      </p>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer class="page-footer purple darken-2">
     <div class="container">
-      <p class="white-text center">&copy; 2025 ESO 4 - Departamento de Informática</p>
+      <p class="white-text center">&copy; 2025 ESO 4 – Departamento de Informática</p>
     </div>
   </footer>
 
+  <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
