@@ -1,42 +1,61 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Lenguajes de Programación - ESO 4</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Materialize CSS y Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Lenguajes de Programación</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html#estudia">Qué vamos a estudiar</a></li>
-        <li><a href="index.html#welcome">Vídeo de bienvenida</a></li>
-        <li><a href="contenido.html">Contenido</a></li>
-        <li><a href="test.html">Autoevaluación</a></li>
-        <li><a href="instrucciones.html">Entrega</a></li>
+  <!-- Barra de navegación -->
+  <nav class="purple darken-2">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo"><i class="material-icons">code</i>Lenguajes</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
+        <li><a href="contenido.html"><i class="material-icons left">menu_book</i>Contenido</a></li>
+        <li><a href="test.html"><i class="material-icons left">quiz</i>Autoevaluación</a></li>
       </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="estudia">
-      <h2>Qué vamos a estudiar</h2>
-      <p>En este curso veremos:</p>
-      <ul>
-        <li>Concepto de lenguaje de programación</li>
-        <li>Tipos: compilados vs interpretados</li>
-        <li>Lenguajes populares: Python, Java, C++, JavaScript</li>
-        <li>Aplicaciones: desarrollo web, aplicaciones móviles, IA</li>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Apartado 1 -->
+    <div class="section">
+      <h3>Qué vamos a estudiar</h3>
+      <ul class="collection with-header">
+        <li class="collection-header"><h5>Temas principales</h5></li>
+        <li class="collection-item">Concepto y evolución de los lenguajes de programación</li>
+        <li class="collection-item">Diferencia entre compilado e interpretado</li>
+        <li class="collection-item">Lenguajes populares: Python, Java, C++, JavaScript, Go</li>
+        <li class="collection-item">Ámbitos de aplicación: web, móviles, sistemas embebidos, IA</li>
       </ul>
-    </section>
-    <section id="welcome">
-      <h2>Vídeo de bienvenida</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/TUTORIAL_ID" title="Vídeo de bienvenida a la programación" frameborder="0" allowfullscreen></iframe>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 ESO 4 - Departamento de Informática</p>
+    </div>
+    <!-- Apartado 2 -->
+    <div class="section">
+      <h3>Vídeo de bienvenida</h3>
+      <div class="video-container">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/TUTORIAL_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer purple darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <p class="white-text center">&copy; 2025 ESO 4 - Departamento de Informática</p>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- Scripts de Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
+
